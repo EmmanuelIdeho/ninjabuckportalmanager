@@ -29,5 +29,5 @@ def home(response):
     return render(response, "myapp/home.html", {"students":students})
 
 #renders the page with prizes and merchandise that the students can get by redeeming ninja bucks.
-def prizes(response):
-    return render(response, "myapp/prizes.html", {})
+def rewards(response):
+    return render(response, "myapp/rewards.html", {})

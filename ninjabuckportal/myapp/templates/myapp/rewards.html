@@ -1,0 +1,11 @@
+{% extends 'myapp/base.html' %}
+
+{% load static %}
+{% block title %}<h1>Ninja Rewards</h1>{% endblock %}
+
+{% block content %}
+<body>
+  <p>Note: this is a sample of possible prizes</p>
+  <img src="{% static 'myapp/images/samplerewards.jpeg' %}" alt="buckposter" width="700" height="800">
+</body>
+{% endblock %}
