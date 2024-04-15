@@ -1,39 +1,36 @@
 {% extends 'myapp/base.html' %}
 {% load static %}
 
-
-
 {% block content %}
   <div class="grid-container">
-  {% for s in students %}
-  <div class="card">
-    <span></span>
-    <div class="content">{{s.getUsername}}</div>
-    <div class="content">{{s.getBuck}}</div>
-    <div class="content">
-      {% if 'White' in s.getBelt %}
-        <img src="{% static 'myapp/images/White.png' %}" alt="belt" width="70" height="70">
-      {% elif 'Yellow' in s.getBelt %}
-        <img src="{% static 'myapp/images/Yellow.png' %}" alt="belt" width="70" height="70">
-      {% elif 'Orange' in s.getBelt %}
-        <img src="{% static 'myapp/images/Orange.png' %}" alt="belt" width="70" height="70">
-      {% elif 'Green' in s.getBelt %}
-        <img src="{% static 'myapp/images/Green.png' %}" alt="belt" width="70" height="70">
-      {% elif 'Blue' in s.getBelt %}
-        <img src="{% static 'myapp/images/Blue.png' %}" alt="belt" width="70" height="70">
-      {% elif 'Purple' in s.getBelt %}
-        <img src="{% static 'myapp/images/Purple.png' %}" alt="belt" width="70" height="70">
-      {% elif 'Brown' in s.getBelt %}
-        <img src="{% static 'myapp/images/Brown.png' %}" alt="belt" width="70" height="70">
-      {% elif 'Red' in s.getBelt %}
-        <img src="{% static 'myapp/images/Red.png' %}" alt="belt" width="70" height="70">
-      {% elif 'Black' in s.getBelt %}
-        <img src="{% static 'myapp/images/Black.png' %}" alt="belt" width="70" height="70">
-      {% elif 'Scratch' in s.getBelt %}
-        <img src="{% static 'myapp/images/ScratchJr.png' %}" alt="belt" width="100" height="100">
-      {% endif %}
-    </div>
-  </div>
-  {% endfor %}
+    {% for s in students %}
+      <div class="card">
+        <div class="content">
+          <span class='element'>{{ s.getUsername }}</span>
+          <span class='element'>{{ s.getBuck }}</span>
+          {% if 'White' in s.getBelt %}
+            <img src="{% static 'myapp/images/White.png' %}" alt="belt" width="70" height="70">
+          {% elif 'Yellow' in s.getBelt %}
+            <img src="{% static 'myapp/images/Yellow.png' %}" alt="belt" width="70" height="70">
+          {% elif 'Orange' in s.getBelt %}
+            <img src="{% static 'myapp/images/Orange.png' %}" alt="belt" width="70" height="70">
+          {% elif 'Green' in s.getBelt %}
+            <img src="{% static 'myapp/images/Green.png' %}" alt="belt" width="70" height="70">
+          {% elif 'Blue' in s.getBelt %}
+            <img src="{% static 'myapp/images/Blue.png' %}" alt="belt" width="70" height="70">
+          {% elif 'Purple' in s.getBelt %}
+            <img src="{% static 'myapp/images/Purple.png' %}" alt="belt" width="70" height="70">
+          {% elif 'Brown' in s.getBelt %}
+            <img src="{% static 'myapp/images/Brown.png' %}" alt="belt" width="70" height="70">
+          {% elif 'Red' in s.getBelt %}
+            <img src="{% static 'myapp/images/Red.png' %}" alt="belt" width="70" height="70">
+          {% elif 'Black' in s.getBelt %}
+            <img src="{% static 'myapp/images/Black.png' %}" alt="belt" width="70" height="70">
+          {% elif 'Scratch' in s.getBelt %}
+            <img src="{% static 'myapp/images/ScratchJr.png' %}" alt="belt" width="100" height="100">
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
   </div>
 {% endblock %}

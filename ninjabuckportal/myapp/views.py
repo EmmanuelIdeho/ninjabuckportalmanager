@@ -25,7 +25,7 @@ def home(response):
                             belt=row['Rank'])
             s.save()
             """
-    students = Student.objects.all()
+    students = Student.objects.order_by("-buck_amount")[:300]
     return render(response, "myapp/home.html", {"students":students})
 
 #renders the page with prizes and merchandise that the students can get by redeeming ninja bucks.
