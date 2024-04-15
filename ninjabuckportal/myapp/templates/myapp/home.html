@@ -1,7 +1,7 @@
 {% extends 'myapp/base.html' %}
 {% load static %}
 
-{% block title %}<h1>Leaderboard</h1>{% endblock %}
+
 
 {% block content %}
   <div class="grid-container">
@@ -9,7 +9,7 @@
   <div class="card">
     <span></span>
     <div class="content">{{s.getUsername}}</div>
-    <div class="content">Ninjabucks:{{s.getBuck}}</div>
+    <div class="content">{{s.getBuck}}</div>
     <div class="content">
       {% if 'White' in s.getBelt %}
         <img src="{% static 'myapp/images/White.png' %}" alt="belt" width="70" height="70">
