@@ -1,5 +1,14 @@
 {% extends 'myapp/base.html' %}
 {% load static %}
+{% csrf_token %}
+{% block search %}
+<div class="input-group rounded">
+  <form action="{% url 'home' %}" method='get'>
+    <input type="text" id="lname" name="lname" value=""><br><br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+{% endblock %}
 
 {% block content %}
   <div class="grid-container">
