@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
 from .models import Student
 #import csv
 #import pandas as pd
@@ -25,14 +24,17 @@ def home(response):
                             belt=row['Rank'])
             s.save()
             """
-    if response.method == 'get':
-        search = response.GET.get('value','')
-        students = Student.objects.get(name=search)
-        return render(response, "myapp/home.html", {"students":students})
-    else:
-        students = Student.objects.order_by("-buck_amount")
-        return render(response, "myapp/home.html", {"students":students})
+    students = Student.objects.order_by("-buck_amount")[:10]
+    return render(response, "myapp/home.html", {"students":students})
 
 #renders the page with prizes and merchandise that the students can get by redeeming ninja bucks.
 def rewards(response):
     return render(response, "myapp/rewards.html", {})
+
+def search(response):
+    if response.method == "POST":
+        searched = response.POST['searched']
+        students = Student.objects.filter(first_name__contains=searched)
+        return render(response, "myapp/search.html", {"searched":searched, "students":students})
+    else:
+        return render(response, "myapp/search.html", {})

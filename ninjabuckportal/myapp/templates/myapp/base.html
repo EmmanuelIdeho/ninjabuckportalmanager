@@ -130,7 +130,13 @@
   <div class="sidenav">
     <a href="/">Leaderboard</a>
     <a href="/rewards/">Rewards</a>
-    {% block search %}{% endblock %}
+    <div class="input-group rounded">
+      <form action="{% url 'search' %}" method=POST>
+        {% csrf_token %}
+        <input type="search" placeholder="Search for a student" aria-label="Search" name="searched">
+        <button type="submit">Search</button>
+      </form>
+    </div>
   </div>
   <div id="content", name="content" class="main">
     <div class="row justify-content-center">
