@@ -24,7 +24,7 @@ def home(response):
                             belt=row['Rank'])
             s.save()
             """
-    students = Student.objects.order_by("-buck_amount")[:10]
+    students = Student.objects.order_by("-buck_amount")[:15]
     return render(response, "myapp/home.html", {"students":students})
 
 #renders the page with prizes and merchandise that the students can get by redeeming ninja bucks.
@@ -34,7 +34,8 @@ def rewards(response):
 def search(response):
     if response.method == "POST":
         searched = response.POST['searched']
-        students = Student.objects.filter(first_name__contains=searched)
+
+        students = Student.objects.filter(first_name__startswith=searched)
         return render(response, "myapp/search.html", {"searched":searched, "students":students})
     else:
         return render(response, "myapp/search.html", {})

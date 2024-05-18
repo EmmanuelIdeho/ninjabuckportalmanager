@@ -1,5 +1,5 @@
 <!doctype html>
-<html style="background-color: powderblue;">
+<html>
 <head>
   <style type="text/css">
 
@@ -32,84 +32,79 @@
       padding:0px 10px;
     }
 
-  .card {
-  position: relative;
-  width: 300px;
-  height: 50px;
-  color: #ffffff;
-  transition: 0.5s;
-  cursor: pointer;
-}
+    .card {
+     position: relative;
+     width: 300px;
+     height: 50px;
+     color: #ffffff;
+     transition: 0.5s;
+     cursor: pointer;
+   }
 
+   .card:hover {
+     transform: translateY(-20px);
+   }
 
-.card:hover {
-  transform: translateY(-20px);
-}
+   .card::before {
+     content: '';
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     top: 0;
+     left: 0;
+     background: linear-gradient(45deg, #4287f5, #2c2ce8);
+     border-radius: 1.2em;
+   }
 
-.card::before {
-  content: '';
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: linear-gradient(45deg, #4287f5, #2c2ce8);
-  border-radius: 1.2em;
-}
+   .card::after {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: linear-gradient(45deg, #4287f5, #2c2ce8);
+     filter: blur(30px);
+   }
 
-.card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, #4287f5, #2c2ce8);
-  filter: blur(30px);
-}
+   .card span {
+     position: absolute;
+     top: 6px;
+     left: 6px;
+     right: 6px;
+     bottom: 6px;
+     background-color: rgba(0, 0, 0, 0.6);
+     z-index: 2;
+     border-radius: 1em;
+   }
 
-.card span {
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  right: 6px;
-  bottom: 6px;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 2;
-  border-radius: 1em;
-}
+   .card span::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 70%;
+     height: 100%;
+     background-color: rgba(255, 255, 255, 0.1);
+   }
 
-.card span::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
-}
+   .card .content {
+     position: relative;
+     padding: 10px;
+     z-index: 10;
+     width: 100%;
+     height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     font-weight: 600;
+     font-size: 1.2em;
+     color: white;
+   }
 
-
-
-.card .content {
-  position: relative;
-  padding: 10px;
-  z-index: 15;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start
-  font-weight: 800;
-  font-size: 1.5em;
-  color: white;
-}
-
-.card .content .element {
-  margin-right: auto;
-}
-
-.card .content img {
-  margin-right: 50px; /* Add spacing between images */
+img {
+  margin-left: 5px;
+  z-index:10;
 }
 
 .grid-container {
@@ -151,7 +146,6 @@
 
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
 
 </body>
 </html>
