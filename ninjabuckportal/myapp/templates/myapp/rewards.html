@@ -3,8 +3,7 @@
 {% load static %}
 
 {% block content %}
-<body>
-  <p><strong>Note: this is a sample of possible prizes</strong></p>
-  <img src="{% static 'myapp/images/samplerewards.jpeg' %}" alt="poster" width="700" height="800">
-</body>
+  {% for reward in rewards %}
+  <img src="{% static 'myapp/images/'|add:reward.strip|add:'.png' %}" alt="poster" width="200" height="200">
+  {% endfor %}
 {% endblock %}

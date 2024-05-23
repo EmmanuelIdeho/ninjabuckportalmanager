@@ -3,32 +3,12 @@
 
 {% block content %}
 {% if searched %}
-<div class="grid-container"> 
+<div class="grid-container">
     {% for student in students %}
     <div class="card">
       <span></span>
     <div class="content">
-      {% if 'White' in student.getBelt %}
-        <img src="{% static 'myapp/images/White.png' %}" alt="belt" width="70" height="70">
-      {% elif 'Yellow' in student.getBelt %}
-        <img src="{% static 'myapp/images/Yellow.png' %}" alt="belt" width="70" height="70">
-      {% elif 'Orange' in student.getBelt %}
-        <img src="{% static 'myapp/images/Orange.png' %}" alt="belt" width="70" height="70">
-      {% elif 'Green' in student.getBelt %}
-        <img src="{% static 'myapp/images/Green.png' %}" alt="belt" width="70" height="70">
-      {% elif 'Blue' in student.getBelt %}
-        <img src="{% static 'myapp/images/Blue.png' %}" alt="belt" width="70" height="70">
-      {% elif 'Purple' in student.getBelt %}
-        <img src="{% static 'myapp/images/Purple.png' %}" alt="belt" width="70" height="70">
-      {% elif 'Brown' in student.getBelt %}
-        <img src="{% static 'myapp/images/Brown.png' %}" alt="belt" width="70" height="70">
-      {% elif 'Red' in student.getBelt %}
-        <img src="{% static 'myapp/images/Red.png' %}" alt="belt" width="70" height="70">
-      {% elif 'Black' in student.getBelt %}
-        <img src="{% static 'myapp/images/Black.png' %}" alt="belt" width="70" height="70">
-      {% elif 'Scratch' in student.getBelt %}
-        <img src="{% static 'myapp/images/ScratchJr.png' %}" alt="belt" width="100" height="100">
-      {% endif %}
+        <img src="{% static 'myapp/images/'|add:student.getBelt.strip|add:'.png' %}" alt="belt" width="70" height="70">
       <div class="content">{{ student.getUsername }}</div>
       <div class="content">{{ student.getBuck }}</div>
     </div>

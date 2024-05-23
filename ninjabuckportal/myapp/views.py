@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Student
+from .models import Student, Reward
 #import csv
 #import pandas as pd
 
@@ -29,7 +29,8 @@ def home(response):
 
 #renders the page with prizes and merchandise that the students can get by redeeming ninja bucks.
 def rewards(response):
-    return render(response, "myapp/rewards.html", {})
+    rewards = Reward.objects.all()
+    return render(response, "myapp/rewards.html", {"rewards":rewards})
 
 def search(response):
     if response.method == "POST":

@@ -20,3 +20,17 @@ class Student(models.Model):
 
     def getBelt(self):
         return str(self.belt)
+
+class Reward(models.Model):
+    name = models.CharField(max_length=30)
+    price = models.IntegerField()
+    image = models.CharField(max_length=30)
+
+    def __str__(self):
+        return name
+
+    def getPrice(self):
+        return price
+
+    def getImage(self):
+        return image
