@@ -24,13 +24,12 @@ class Student(models.Model):
 class Reward(models.Model):
     name = models.CharField(max_length=30)
     price = models.IntegerField()
-    image = models.CharField(max_length=30)
 
     def __str__(self):
-        return name
+        return str(self.name)
+    
+    def getName(self):
+        return str(self.name)
 
     def getPrice(self):
-        return price
-
-    def getImage(self):
-        return image
+        return int(self.price)

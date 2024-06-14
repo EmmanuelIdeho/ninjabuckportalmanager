@@ -3,7 +3,14 @@
 {% load static %}
 
 {% block content %}
-  {% for reward in rewards %}
-  <img src="{% static 'myapp/images/'|add:reward.strip|add:'.png' %}" alt="poster" width="200" height="200">
+    {% for reward in reward_list %}
+    <div class="slide">
+      <span></span>
+      <div class="content">
+        <img src="{% static 'myapp/images/'|add:reward.getName.strip|add:'.png' %}" alt="belt" width="200" height="200">
+        <div class="content"> {{ reward.getName }} </div>
+        <div class="number"> {{ reward.getPrice }} Ninja Buck(s)</div>
+      </div>
+    </div>
   {% endfor %}
 {% endblock %}

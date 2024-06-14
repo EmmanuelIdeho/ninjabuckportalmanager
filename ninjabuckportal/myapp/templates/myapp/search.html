@@ -1,5 +1,4 @@
 {% extends 'myapp/base.html' %}
-{% load static %}
 
 {% block content %}
 {% if searched %}
@@ -8,7 +7,7 @@
     <div class="card">
       <span></span>
     <div class="content">
-        <img src="{% static 'myapp/images/'|add:student.getBelt.strip|add:'.png' %}" alt="belt" width="70" height="70">
+        <img src="{% static './myapp/images/'|add:student.getBelt.strip|add:'.png' %}" alt="belt" width="70" height="70">
       <div class="content">{{ student.getUsername }}</div>
       <div class="content">{{ student.getBuck }}</div>
     </div>

@@ -29,8 +29,8 @@ def home(response):
 
 #renders the page with prizes and merchandise that the students can get by redeeming ninja bucks.
 def rewards(response):
-    rewards = Reward.objects.all()
-    return render(response, "myapp/rewards.html", {"rewards":rewards})
+    reward_list = Reward.objects.all()
+    return render(response, "myapp/rewards.html", {"reward_list":reward_list})
 
 def search(response):
     if response.method == "POST":
