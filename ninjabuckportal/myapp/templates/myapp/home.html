@@ -1,15 +1,22 @@
 {% extends 'myapp/base.html' %}
 {% load static %}
 
+{% block title %}Leaderboard - Code Ninjas Bucks Manager{% endblock %}
+{% block page_title %}Ninja Bucks Leaderboard{% endblock %}
+
 {% block content %}
   <div class="grid-container">
-    {% for s in students %}
-      <div class="card">
+    {% for student in students %}
+      <div class="ninja-card">
         <span></span>
         <div class="content">
-            <img src="{% static 'myapp/images/'|add:s.getBelt.strip|add:'.png' %}" alt="belt" width="70" height="70">
-          <div class="content">{{ s.getUsername }} </div>
-          <div class="content">{{ s.getBuck }}</div>
+          <div class="ninja-avatar">
+            <img src="{% static student.getBelt %}" alt="ninja belt" class="belt-img">
+          </div>
+          <div class="ninja-info">
+            <div class="ninja-name">{{ student.getUsername }}</div>
+            <div class="ninja-bucks">{{ student.getAmount }}</div>
+          </div>
         </div>
       </div>
     {% endfor %}

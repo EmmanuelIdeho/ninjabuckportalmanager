@@ -1,16 +1,26 @@
 {% extends 'myapp/base.html' %}
-
 {% load static %}
 
+{% block title %}Rewards - Code Ninjas Bucks Manager{% endblock %}
+{% block page_title %}Ninja Bucks Rewards{% endblock %}
+
 {% block content %}
+  <div class="rewards-container">
     {% for reward in reward_list %}
-    <div class="slide">
-      <span></span>
-      <div class="content">
-        <img src="{% static 'myapp/images/'|add:reward.getName.strip|add:'.png' %}" alt="belt" width="200" height="200">
-        <div class="content"> {{ reward.getName }} </div>
-        <div class="number"> {{ reward.getPrice }} Ninja Buck(s)</div>
+      {% if reward.getImage %}
+      <div class="reward-slide">
+        <span></span>
+        <div class="content">
+          <div class="reward-image">
+            <img src="{% static reward.getImage %}" alt="{{ reward.getName }}" class="reward-img">
+          </div>
+          <div class="reward-info">
+            <div class="reward-name">{{ reward.getName }}</div>
+            <div class="reward-price">{{ reward.getPrice }} Ninja Buck{% if reward.getPrice != 1 %}s{% endif %}</div>
+          </div>
+        </div>
       </div>
-    </div>
-  {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </div>
 {% endblock %}
