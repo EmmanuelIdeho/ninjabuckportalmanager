@@ -62,6 +62,6 @@ Ninja Bucks are virtual points earned by students for completing game projects, 
 - Use `python manage.py check --deploy` to audit your production settings.
 
 ## Future Improvements
--Multilingual support
--Google Sheets integration for redemptions
+- Multilingual support
+- Google Sheets integration for redemptions
  
