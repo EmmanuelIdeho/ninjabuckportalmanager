@@ -1,0 +1,388 @@
+/* Code Ninjas Brand Colors */
+:root {
+  --cn-black: #000000;
+  --cn-darkgray: #424244;
+  --cn-tan: #D7C19D;
+  --cn-light-beige: #D5D3B1;
+  --cn-blue: #2385B1;
+  --cn-background: #e0f0f5;
+  --cn-white: #ffffff;
+}
+
+html, body {
+  background-color: var(--cn-background);
+  font-family: 'Arial', sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling for the navbar */
+.sidenav {
+  height: 100%;
+  width: 220px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--cn-black);
+  overflow-x: hidden;
+  padding-top: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 80%;
+  max-width: 180px;
+}
+
+.sidenav a {
+  padding: 12px 16px;
+  text-decoration: none;
+  color: var(--cn-white);
+  font-size: 18px;
+  display: block;
+  transition: 0.3s;
+  margin: 5px 0;
+  border-left: 4px solid transparent;
+}
+
+.sidenav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid var(--cn-blue);
+}
+
+.search-container {
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid var(--cn-darkgray);
+  border-radius: 4px;
+}
+
+.search-btn {
+  width: 100%;
+  padding: 8px;
+  background-color: var(--cn-blue);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+  background-color: #1d6d8f;
+}
+
+.main {
+  margin-left: 220px;
+  padding: 20px;
+}
+
+.page-header {
+  margin-bottom: 30px;
+  color: var(--cn-darkgray);
+  border-bottom: 2px solid var(--cn-blue);
+  padding-bottom: 10px;
+}
+
+.page-header h1 {
+  font-weight: bold;
+  color: var(--cn-blue);
+}
+
+/* Styling for the ninja cards */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 25px;
+}
+
+.ninja-card {
+  position: relative;
+  height: 110px;
+  color: var(--cn-white);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ninja-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ninja-card::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(45deg, var(--cn-blue), #1d6d8f);
+  border-radius: 12px;
+}
+
+.ninja-card span {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  border-radius: 8px;
+}
+
+.ninja-card .content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.belt-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: contain;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 5px;
+}
+
+.ninja-info {
+  flex-grow: 1;
+  margin-left: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ninja-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.ninja-bucks {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Styling for the rewards */
+.rewards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 25px;
+}
+
+.reward-slide {
+  position: relative;
+  height: 180px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.reward-slide:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.reward-slide span {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background-color: var(--cn-white);
+  z-index: 2;
+  border-radius: 15px;
+}
+
+.reward-slide .content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.reward-image {
+  width: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reward-img {
+  max-width: 120px;
+  max-height: 120px;
+  object-fit: contain;
+}
+
+.reward-info {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.reward-name {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--cn-black);
+  margin-bottom: 10px;
+}
+
+.reward-price {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--cn-blue);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 992px) {
+  .rewards-container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidenav {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 15px;
+  }
+  
+  .logo-container {
+    margin-bottom: 15px;
+  }
+
+  .sidenav a {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-right: 10px;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+  }
+
+  .sidenav a:hover {
+    border-left: none;
+    border-bottom: 3px solid var(--cn-blue);
+  }
+
+  .search-container {
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .grid-container, .rewards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ninja-card .content, .reward-slide .content {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .ninja-info, .reward-info {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .ninja-card {
+    height: 150px;
+  }
+
+  .reward-slide {
+    height: 250px;
+  }
+
+  .reward-image {
+    width: 100%;
+  }
+
+  .ninja-info {
+    flex-direction: column;
+  }
+
+  .ninja-bucks {
+    margin-top: 5px;
+  }
+}
+
+/* Additional CSS for search results page - add to your code_ninjas.css file */
+
+.search-heading {
+  margin-bottom: 20px;
+  color: var(--cn-darkgray);
+}
+
+.search-term {
+  color: var(--cn-blue);
+  font-weight: 700;
+}
+
+.no-results, .no-search {
+  text-align: center;
+  padding: 30px;
+  background-color: var(--cn-white);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.no-results p, .no-search p {
+  color: var(--cn-darkgray);
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.no-search h2 {
+  color: var(--cn-blue);
+  margin-bottom: 15px;
+}
+
+/* Empty state styling */
+.grid-container:empty {
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 10px;
+  border: 2px dashed var(--cn-light-beige);
+}
+
+.grid-container:empty::after {
+  content: 'No results found';
+  color: var(--cn-darkgray);
+  font-size: 18px;
+}

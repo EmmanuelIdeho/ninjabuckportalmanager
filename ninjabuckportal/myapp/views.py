@@ -4,7 +4,7 @@ from .models import Student, Reward
 
 #renders the leaderboard
 def home(response):
-    students = Student.objects.order_by("-buck_amount")[:15]
+    students = Student.objects.order_by("-buck_amount")[:8]
     return render(response, "myapp/home.html", {"students":students})
 
 #renders the page with prizes and merchandise that the students can get by redeeming ninja bucks.
