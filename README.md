@@ -24,7 +24,6 @@ Ninja Bucks are virtual points earned by students for completing game projects, 
 - HTML, CSS, Django templates
 
 ---
-##Getting Started
 
 ## Setup & Installation
 
@@ -59,7 +58,7 @@ Ninja Bucks are virtual points earned by students for completing game projects, 
    http://localhost:8000
 
 
-##Deployment Notes
+## Deployment Notes
 - Use `python manage.py check --deploy` to audit your production settings.
 
 ##Future Improvements
