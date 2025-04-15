@@ -18,7 +18,7 @@ def search(response):
         if searched.strip() == '':
             return render(response, "myapp/search.html", {})
 
-        students = Student.objects.filter(first_name__startswith=searched)
+        students = Student.objects.filter(first_name__istartswith=searched)
         return render(response, "myapp/search.html", {"searched":searched, "students":students})
     else:
         return render(response, "myapp/search.html", {})

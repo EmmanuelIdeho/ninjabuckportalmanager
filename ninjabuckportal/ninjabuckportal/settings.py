@@ -85,6 +85,18 @@ DATABASES = {
     }
 }
 
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ninjabucksmanage$default',
+        'USER': 'ninjabucksmanage',
+        'PASSWORD': "K/mP)'jZS*v#8u",
+        'HOST': 'ninjabucksmanager.mysql.pythonanywhere-services.com',
+    }
+}
+"""
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -132,7 +144,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
 if not DEBUG:
     #enforce SSL(Secure Socket Layer) rules
     SECURE_HSTS_SECONDS = 31536000 # 1 year
@@ -142,3 +153,4 @@ if not DEBUG:
     # ensures session cookies and CSRF tokens are only sent over HTTPS
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
+
