@@ -15,7 +15,10 @@ Ninja Bucks are virtual points earned by students for completing game projects, 
 - Login system with user authentication
 
 ---
+### Screenshot
 
+![](./screenshot.jpg)
+---
 ## Built With
 
 - [Python](https://www.python.org/)
