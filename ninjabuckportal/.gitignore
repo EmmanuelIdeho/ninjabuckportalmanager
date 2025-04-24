@@ -1,2 +1,13 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Unit test / coverage reports
+.pytest_cache/
+
+# Django stuff:
+db.sqlite3
+
+# Environments
+env/
 .env
 ".env" 
