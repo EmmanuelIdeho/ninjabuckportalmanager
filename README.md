@@ -31,7 +31,7 @@ Ninja Bucks are virtual points earned by students for completing game projects, 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/ninjabuckportalmanager.git
+   git clone https://github.com/EmmanuelIdeho/ninjabuckportalmanager.git
    cd ninjabuckportalmanager
 
 2. **Create a virtual environment**
