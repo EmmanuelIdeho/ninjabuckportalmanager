@@ -8,11 +8,10 @@ Ninja Bucks are virtual points earned by students for completing game projects, 
 ## Features
 
 - Instructor portal to add Ninja Bucks to students
-- Reward catalog with images, prices, and stock
+- Reward catalog with images and prices
 - Students can redeem points for real-world items
 - Admin interface for managing users, rewards, and redemptions
 - Supports image uploads for reward visuals
-- Login system with user authentication
 
 ---
 ### Screenshot
