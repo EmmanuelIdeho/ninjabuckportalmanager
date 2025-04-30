@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from django.db.models import Q
 from .models import Student, Reward
+
 # Create your views here.
 
 #renders the leaderboard
@@ -18,7 +20,9 @@ def search(response):
         if searched.strip() == '':
             return render(response, "myapp/search.html", {})
 
-        students = Student.objects.filter(first_name__istartswith=searched) or Student.objects.filter(last_name__istartswith=searched)
+        students = Student.objects.filter(
+            Q(first_name__istartswith=searched) | Q(last_name__istartswith=searched)
+            )
         return render(response, "myapp/search.html", {"searched":searched, "students":students})
     else:
         return render(response, "myapp/search.html", {})
